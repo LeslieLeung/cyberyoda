@@ -1,4 +1,4 @@
-from cyberyoda.bot.handle_chat import handle_reset, handle_system
+from cyberyoda.bot.handle_chat import handle_reset, handle_system, handle_temp
 from cyberyoda.bot.handle_simple import handle_help
 
 resp_template: str = """<xml>
@@ -21,6 +21,8 @@ def handle_func(data: dict):
             content = handle_reset(userid)
         case s if s.startswith("/system"):
             content = handle_system(prompt, userid)
+        case s if s.startswith("/temp"):
+            content = handle_temp(prompt, userid)
         case _:
             content = "unknown command"
 

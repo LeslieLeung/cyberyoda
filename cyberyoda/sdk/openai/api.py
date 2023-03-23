@@ -36,6 +36,7 @@ class ChatGPT:
     """
 
     _openai: openai
+    temperature: float
 
     def __init__(self):
         self._openai = openai
@@ -45,6 +46,7 @@ class ChatGPT:
         response = self._openai.ChatCompletion.create(
             model="gpt-3.5-turbo-0301",
             messages=history,
+            temperature=self.temperature,
         )
         response_text = response["choices"][0]["message"]["content"].strip()
         logging.info(f"[OpenAI] response: {response_text}")

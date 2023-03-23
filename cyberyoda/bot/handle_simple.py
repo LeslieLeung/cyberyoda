@@ -11,4 +11,5 @@ def handle_help():
     /system [text] 保存系统指令（见https://platform.openai.com/docs/guides/chat/instructing-chat-models）
     prompt参考 https://www.explainthis.io/zh-hans/chatgpt
     /reset 重置对话历史
+    /temp [temperature] 设置temperature
     """
